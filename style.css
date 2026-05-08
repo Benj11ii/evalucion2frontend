@@ -1,0 +1,228 @@
+/* ── CE4: reset base y variables de color institucional ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --color-primary: #267BB7;
+    --color-dark:    #02445E;
+    --color-accent:  #C8A951;
+    --color-bg:      #F4F6F8;
+    --color-text:    #1A1A2E;
+    --color-error:   #D32F2F;
+    --color-success: #2E7D32;
+}
+
+/* CE6: tipografía jerarquizada */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* CE6: jerarquía tipográfica */
+h1 { font-size: 2.2rem; font-weight: 700; }
+h2 { font-size: 1.6rem; font-weight: 600; margin-bottom: 1rem; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+
+
+/* ── CE4/CE5: navbar semántico, coherente y accesible ── */
+#main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 2rem;
+    background-color: var(--color-primary);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s, padding 0.3s;
+}
+
+.logo { font-size: 1.3rem; font-weight: 700; letter-spacing: 1px; }
+
+#nav-menu ul { display: flex; gap: 1.5rem; list-style: none; }
+#nav-menu ul a { color: white; text-decoration: none; font-weight: 500; }
+#nav-menu ul a:hover { color: var(--color-accent); }
+
+/* CE4: botón hamburguesa oculto en desktop */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* ── CE5/CE6: hero institucional con jerarquía visual ── */
+#hero {
+    background-color: var(--color-dark);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+#hero p { margin-top: 0.5rem; font-size: 1.1rem; opacity: 0.85; }
+
+
+/* ── CE1: buscador ── */
+#search-section {
+    padding: 1.5rem 2rem;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+#site-search {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+
+/* ── CE3: sección de avisos dinámicos ── */
+#avisos { padding: 2rem; }
+#avisos-container { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+.aviso-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    background: white;
+    border-left: 4px solid var(--color-accent);
+    border-radius: 4px;
+}
+.aviso-item button {
+    background: var(--color-error);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#btn-agregar-aviso {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* ── CE5/CE6: grid de tarjetas, coherencia visual ── */
+#tramites, #noticias { padding: 2rem; }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* CE1: transición para hover de tarjetas */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-top: 4px solid var(--color-primary);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+
+/* ── CE2: formulario con estilos de validación en tiempo real ── */
+#contacto { padding: 2rem; max-width: 600px; }
+
+#contact-form { display: flex; flex-direction: column; gap: 0.5rem; }
+
+#contact-form label { font-weight: 600; margin-top: 0.5rem; }
+
+#contact-form input,
+#contact-form textarea {
+    padding: 0.6rem 1rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+#contact-form textarea { min-height: 120px; resize: vertical; }
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+/* CE2: estilos de error por campo */
+.field-error { color: var(--color-error); font-size: 0.85rem; min-height: 1rem; }
+
+#contact-form button[type="submit"] {
+    margin-top: 1rem;
+    padding: 0.7rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#form-status { margin-top: 0.5rem; font-weight: 600; min-height: 1.2rem; }
+
+
+/* ── CE4: footer semántico ── */
+footer {
+    background: var(--color-dark);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 2;
+}
+
+
+/* ── CE1: botón scroll top ── */
+#scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* ── CE4: diseño responsivo con media queries ── */
+@media (max-width: 768px) {
+
+    /* CE4: menú hamburguesa visible en móvil */
+    #menu-toggle { display: block; }
+
+    #nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--color-dark);
+        padding: 1rem 2rem;
+    }
+    #nav-menu.active { display: block; }
+    #nav-menu ul { flex-direction: column; gap: 1rem; }
+
+    /* CE4: grid a una columna en móvil */
+    .grid-container { grid-template-columns: 1fr; }
+
+    #hero { padding: 2.5rem 1rem; }
+    #hero h1 { font-size: 1.6rem; }
+}
